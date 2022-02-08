@@ -4,15 +4,21 @@
     const title = "Todos";
 </script>
 
+<style >
+
+</style>
+
 <svelte:head>
     <title>{title}</title>
 </svelte:head>
 
-<h1>{title}</h1>
-<form action="" method="">
-    <input type="text" name="text" aria-label="Add a todo" placeholder="+ Type to add a Todo"/>
-</form>
+<div>
+    <h1>{title}</h1>
+    <form action="" method="">
+        <input type="text" name="text" aria-label="Add a todo" placeholder="+ Type to add a Todo"/>
+    </form>
 
-<TodoItem />
-<TodoItem />
-<TodoItem />
+    <TodoItem />
+    <TodoItem />
+    <TodoItem />
+</div>
