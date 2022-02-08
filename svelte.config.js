@@ -9,7 +9,7 @@ const config = {
 
 	kit: {
 		adapter: adapter(),
-		target: '#svelte',
+	//	target: '#svelte',
 		vite: {
 			server: {
 				hmr: {
@@ -17,7 +17,8 @@ const config = {
 					host: process.env.HMR_HOST ? process.env.HMR_HOST.substring("https://".length) : "localhost"
 				}
 			}
-		}	}
+		}	
+	}
 };
 
 export default config;
