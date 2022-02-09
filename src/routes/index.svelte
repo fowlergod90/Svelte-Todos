@@ -15,7 +15,7 @@
         margin : 0 0 0.5rem 0;
     }
 
-    .newe input{
+    .new input{
         font-size : 28px;
     }
 
