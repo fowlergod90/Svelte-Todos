@@ -5,6 +5,19 @@
 </script>
 
 <style >
+    .todos{
+        width : 100%;
+        max-width: 42rem;
+        margin: 4rem auto 0 auto;
+    }
+
+    .new{
+        margin : 0 0 0.5rem 0;
+    }
+
+    .newe input{
+        font-size : 28px;
+    }
 
 </style>
 
@@ -12,9 +25,9 @@
     <title>{title}</title>
 </svelte:head>
 
-<div>
+<div class="todos" >
     <h1>{title}</h1>
-    <form action="" method="">
+    <form action="" method="" class="new" >
         <input type="text" name="text" aria-label="Add a todo" placeholder="+ Type to add a Todo"/>
     </form>
 
