@@ -1,6 +1,6 @@
 import type { RequestHandler } from "@sveltejs/kit"
 
-let todos: Todo[] = [];
+//let todos: Todo[] = [];
 
 // export const get: RequestHandler = () => {
 //     return {
