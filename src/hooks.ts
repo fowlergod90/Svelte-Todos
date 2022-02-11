@@ -10,13 +10,15 @@ export async function handle({ event, resolve }) {
     console.log(event.url.searchParams.get('_mt'));
     console.log(event.request.method);
 
-    if ( event.url.searchParams.get('_mt') ){
-        let res = await api("DELETE", event.request);
-        console.log("in if");
-    }
-    else{
-    	response = await resolve(event);
-    }
+    // if ( event.url.searchParams.get('_mt') ){
+    //     let res = await api("DELETE", event.request);
+    //     console.log("in if");
+    // }
+    // else{
+    // 	response = await resolve(event);
+    // }
+
+    response = await resolve(event);
 
 	return response;
 }
