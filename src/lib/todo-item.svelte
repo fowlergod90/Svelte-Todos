@@ -85,7 +85,7 @@
         <button aria-label="Save todo" class="save"></button>
     </form>
     
-    <form action="/todos/{todo.uid}?_mt=del" method="post">
+    <form action="/todos/{todo.uid}.json?_mt=del" method="post">
         <button aria-label="Delete todo" class="delete"></button>
     </form>
 </div>

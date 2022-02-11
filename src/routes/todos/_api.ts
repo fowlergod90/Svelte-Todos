@@ -13,7 +13,7 @@ export async function api( method , request?: Request , uid?) {
                 const data = await request.text();
                 //    console.log(data);                
                 todos.push({
-                    uid: '${Date.now()}',  // uid should be generated from DB. This is a workaorund to use milisec 
+                    uid: Date.now().toString(),  // uid should be generated from DB. This is a workaorund to use milisec 
                     created_at: new Date(),
                     done: false,
                     text: data
@@ -25,7 +25,9 @@ export async function api( method , request?: Request , uid?) {
                     location:  "/"
                 }
             };
-        case "DELET":
+        case "DELETE":
+            console.log("del");
+            console.log(uid);
             todos = todos.filter(todo => todo.uid != uid );
             status = 200;
             break;
