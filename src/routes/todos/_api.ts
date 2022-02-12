@@ -19,26 +19,27 @@ export async function api( method , request?: Request , uid?) {
                     text: data
                     }
                 )
-            return {
-                status : 303,  // 303 == tell browser to redirect to a root '/'
-                headers: {
-                    location:  "/"
-                }
-            };
+                status = 201;
+                body   = todos;
+            break;
         case "DELETE":
             console.log("del");
             console.log(uid);
             todos = todos.filter(todo => todo.uid != uid );
             body = todos;
             status = 200;
-            return {
-                status : 303,  // 303 == tell browser to redirect to a root '/'
-                headers: {
-                    location:  "/"
-                }
-            };
+            break;
         default:
             break;
+    }
+
+    if ( method !== "GET") {
+        return {
+            status : 303,  // 303 == tell browser to redirect to a root '/'
+            headers: {
+                location:  "/"
+            }
+        };
     }
 
     return {
