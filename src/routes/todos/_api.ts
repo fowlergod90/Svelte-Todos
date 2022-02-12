@@ -11,7 +11,7 @@ export async function api( method , request?: Request , uid?) {
             break;
         case "POST":
                 const data = await request.text();
-                //    console.log(data);                
+                console.log("post111");                
                 todos.push({
                     uid: Date.now().toString(),  // uid should be generated from DB. This is a workaorund to use milisec 
                     created_at: new Date(),
@@ -29,8 +29,14 @@ export async function api( method , request?: Request , uid?) {
             console.log("del");
             console.log(uid);
             todos = todos.filter(todo => todo.uid != uid );
+            body = todos;
             status = 200;
-            break;
+            return {
+                status : 303,  // 303 == tell browser to redirect to a root '/'
+                headers: {
+                    location:  "/"
+                }
+            };
         default:
             break;
     }
