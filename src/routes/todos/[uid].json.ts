@@ -6,6 +6,21 @@ export async function del( event:RequestEvent) {
     console.log(event.params.uid);
 
     return api("DELETE", event.request , event.params.uid);
+
+    // return {
+    //     status:200,
+    //     body : params.uid
+    // }
+}
+
+export async function patch( event:RequestEvent) {
+    console.log("pacth--");
+    console.log(event.params.uid);
+    const data = await event.request.text(); 
+    console.log(data);
+
+    return api("PATCH", event.request , event.params.uid ,data);
+
     // return {
     //     status:200,
     //     body : params.uid

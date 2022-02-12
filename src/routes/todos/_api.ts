@@ -1,6 +1,6 @@
 let todos: Todo[] = [];
 
-export async function api( method , request?: Request , uid?) {
+export async function api( method , request?: Request , uid? , text?:string) {
     let status = 500;
     let body = {};
     
@@ -29,6 +29,20 @@ export async function api( method , request?: Request , uid?) {
             body = todos;
             status = 200;
             break;
+
+        case "PATCH":
+            console.log("patch");
+            console.log(uid);
+            status = 200;
+            todos = todos.map( todo => {
+                if ( todo.uid === uid ){
+                    todo.text = text;
+                }
+                return todo;
+             }
+            );
+           break;
+    
         default:
             break;
     }
